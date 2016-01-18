@@ -1,0 +1,19 @@
+{
+  "name": "My-Cue-Training",
+  "version": "1.0.0",
+  "description": "node package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prasannac-cuelogic/My-Cue-Training.git"
+  },
+  "author": "Prasanna Pralhad Champanerkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prasannac-cuelogic/My-Cue-Training/issues"
+  },
+  "homepage": "https://github.com/prasannac-cuelogic/My-Cue-Training"
+}
