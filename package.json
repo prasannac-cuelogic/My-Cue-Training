@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/prasannac-cuelogic/My-Cue-Training/issues"
   },
-  "homepage": "https://github.com/prasannac-cuelogic/My-Cue-Training"
+  "homepage": "https://github.com/prasannac-cuelogic/My-Cue-Training",
+  "dependencies": {
+    "fs": "0.0.2"
+  }
 }
