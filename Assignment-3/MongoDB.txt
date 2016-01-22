@@ -1,0 +1,26 @@
+//MongoDB using shell
+//open shell after that add command
+$ mongo
+MongoDB shell version: 2.4.9
+connecting to: test
+> use mongotest //Create new DB
+switched to db mongotest
+> db.createCollection('users', {firstname: 'string', lastname: 'string'}) //Create new collection
+{ "ok" : 1 }
+> db.users.insert({firstname:"Prasanna", lastname:"champanerkar"}) //inserted record
+> db.users.find() //check how many users are present in collection
+> db.users.find().pretty() //Displaying user in well formate
+{
+    "_id" : ObjectId("56a20bf98d392eaf59a44801"),
+    "firstname" : "Prasanna",
+    "lastname" : "champanerkar"
+}
+
+> db.users.drop() //delete collection
+true
+> show collections // show collection list under the database
+
+> use mongotest
+switched to db mongotest
+> db.dropDatabase() //database drop
+
