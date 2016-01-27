@@ -1,0 +1,150 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'node-inspector' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'node-inspector', null ]
+6 verbose cache add name=undefined spec="node-inspector" args=["node-inspector",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'node-inspector',
+7 verbose parsed url   path: 'node-inspector',
+7 verbose parsed url   href: 'node-inspector' }
+8 silly lockFile 4198ef9e-node-inspector node-inspector
+9 verbose lock node-inspector /home/prasanna/.npm/4198ef9e-node-inspector.lock
+10 silly lockFile 4198ef9e-node-inspector node-inspector
+11 silly lockFile 4198ef9e-node-inspector node-inspector
+12 verbose addNamed [ 'node-inspector', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile e68b88da-node-inspector node-inspector@
+15 verbose lock node-inspector@ /home/prasanna/.npm/e68b88da-node-inspector.lock
+16 silly addNameRange { name: 'node-inspector', range: '*', hasData: false }
+17 verbose request where is /node-inspector
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id d4b93e6cc46da550
+20 verbose url raw /node-inspector
+21 verbose url resolving [ 'https://registry.npmjs.org/', './node-inspector' ]
+22 verbose url resolved https://registry.npmjs.org/node-inspector
+23 verbose request where is https://registry.npmjs.org/node-inspector
+24 info trying registry request attempt 1 at 19:12:26
+25 verbose etag "D4GZZ12KA8NB8HCJN6UM35LHT"
+26 http GET https://registry.npmjs.org/node-inspector
+27 http 200 https://registry.npmjs.org/node-inspector
+28 silly registry.get cb [ 200,
+28 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly registry.get     etag: '"BBV4GCQPCNP4QJ0ZF7S5ATUIR"',
+28 silly registry.get     'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=300',
+28 silly registry.get     'content-length': '141816',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     date: 'Fri, 22 Jan 2016 13:42:31 GMT',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     age: '0',
+28 silly registry.get     connection: 'keep-alive',
+28 silly registry.get     'x-served-by': 'cache-sin6927-SIN',
+28 silly registry.get     'x-cache': 'HIT',
+28 silly registry.get     'x-cache-hits': '1',
+28 silly registry.get     'x-timer': 'S1453470151.213226,VS0,VE203',
+28 silly registry.get     vary: 'Accept' } ]
+29 silly addNameRange number 2 { name: 'node-inspector', range: '*', hasData: true }
+30 silly addNameRange versions [ 'node-inspector',
+30 silly addNameRange   [ '0.0.1',
+30 silly addNameRange     '0.0.2',
+30 silly addNameRange     '0.0.3',
+30 silly addNameRange     '0.0.4',
+30 silly addNameRange     '0.1.0',
+30 silly addNameRange     '0.1.1',
+30 silly addNameRange     '0.1.2',
+30 silly addNameRange     '0.1.3',
+30 silly addNameRange     '0.1.4',
+30 silly addNameRange     '0.1.5',
+30 silly addNameRange     '0.1.6',
+30 silly addNameRange     '0.1.7',
+30 silly addNameRange     '0.1.8',
+30 silly addNameRange     '0.1.9',
+30 silly addNameRange     '0.1.10',
+30 silly addNameRange     '0.3.0',
+30 silly addNameRange     '0.3.1',
+30 silly addNameRange     '0.3.2',
+30 silly addNameRange     '0.3.3',
+30 silly addNameRange     '0.3.4',
+30 silly addNameRange     '0.4.0',
+30 silly addNameRange     '0.5.0',
+30 silly addNameRange     '0.6.0',
+30 silly addNameRange     '0.6.1',
+30 silly addNameRange     '0.6.2',
+30 silly addNameRange     '0.7.0-1',
+30 silly addNameRange     '0.2.0-beta1',
+30 silly addNameRange     '0.2.0-beta2',
+30 silly addNameRange     '0.2.0-beta3',
+30 silly addNameRange     '0.2.0-beta4',
+30 silly addNameRange     '0.3.0-preview1',
+30 silly addNameRange     '0.7.0-2',
+30 silly addNameRange     '0.7.0',
+30 silly addNameRange     '0.7.1',
+30 silly addNameRange     '0.7.2',
+30 silly addNameRange     '0.7.3',
+30 silly addNameRange     '0.7.4',
+30 silly addNameRange     '0.8.0',
+30 silly addNameRange     '0.8.1',
+30 silly addNameRange     '0.8.3',
+30 silly addNameRange     '0.9.0',
+30 silly addNameRange     '0.9.1',
+30 silly addNameRange     '0.9.2',
+30 silly addNameRange     '0.10.0',
+30 silly addNameRange     '0.10.1',
+30 silly addNameRange     '0.10.2',
+30 silly addNameRange     '0.11.0',
+30 silly addNameRange     '0.11.1',
+30 silly addNameRange     '0.11.2',
+30 silly addNameRange     '0.12.0',
+30 silly addNameRange     '0.12.1',
+30 silly addNameRange     '0.12.2',
+30 silly addNameRange     '0.12.3',
+30 silly addNameRange     '0.12.4',
+30 silly addNameRange     '0.12.5' ] ]
+31 verbose addNamed [ 'node-inspector', '0.12.5' ]
+32 verbose addNamed [ '0.12.5', '0.12.5' ]
+33 silly lockFile 7a4014f4-node-inspector-0-12-5 node-inspector@0.12.5
+34 verbose lock node-inspector@0.12.5 /home/prasanna/.npm/7a4014f4-node-inspector-0-12-5.lock
+35 silly lockFile 37b6ebb3-pector-node-inspector-0-12-5-tgz https://registry.npmjs.org/node-inspector/-/node-inspector-0.12.5.tgz
+36 verbose lock https://registry.npmjs.org/node-inspector/-/node-inspector-0.12.5.tgz /home/prasanna/.npm/37b6ebb3-pector-node-inspector-0-12-5-tgz.lock
+37 verbose addRemoteTarball [ 'https://registry.npmjs.org/node-inspector/-/node-inspector-0.12.5.tgz',
+37 verbose addRemoteTarball   '0ddf21a6ad7d4f43d66be2a2e7a1e15e936cea0b' ]
+38 info retry fetch attempt 1 at 19:12:27
+39 verbose fetch to= /tmp/npm-14751-WkzXDrDd/registry.npmjs.org/node-inspector/-/node-inspector-0.12.5.tgz
+40 http GET https://registry.npmjs.org/node-inspector/-/node-inspector-0.12.5.tgz
+41 http 200 https://registry.npmjs.org/node-inspector/-/node-inspector-0.12.5.tgz
+42 silly lockFile 37b6ebb3-pector-node-inspector-0-12-5-tgz https://registry.npmjs.org/node-inspector/-/node-inspector-0.12.5.tgz
+43 silly lockFile 37b6ebb3-pector-node-inspector-0-12-5-tgz https://registry.npmjs.org/node-inspector/-/node-inspector-0.12.5.tgz
+44 silly lockFile 7a4014f4-node-inspector-0-12-5 node-inspector@0.12.5
+45 silly lockFile 7a4014f4-node-inspector-0-12-5 node-inspector@0.12.5
+46 silly lockFile e68b88da-node-inspector node-inspector@
+47 silly lockFile e68b88da-node-inspector node-inspector@
+48 error Error: EACCES, mkdir '/home/prasanna/.npm/node-inspector/0.12.5'
+48 error  { [Error: EACCES, mkdir '/home/prasanna/.npm/node-inspector/0.12.5']
+48 error   errno: 3,
+48 error   code: 'EACCES',
+48 error   path: '/home/prasanna/.npm/node-inspector/0.12.5' }
+49 error Please try running this command again as root/Administrator.
+50 error System Linux 3.13.0-76-generic
+51 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "node-inspector"
+52 error cwd /var/www/html/My-Cue-Training
+53 error node -v v0.10.37
+54 error npm -v 1.4.28
+55 error path /home/prasanna/.npm/node-inspector/0.12.5
+56 error code EACCES
+57 error errno 3
+58 error stack Error: EACCES, mkdir '/home/prasanna/.npm/node-inspector/0.12.5'
+59 verbose exit [ 3, true ]

@@ -1,0 +1,18 @@
+{
+  "name": "hapi-server-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prasanna P. Champanerkar",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.1.5",
+    "dotenv": "^2.0.0",
+    "hapi": "^12.1.0",
+    "moment": "^2.11.1",
+    "mongoose": "^4.3.7"
+  }
+}
