@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 
 var schema = {
 
-    userName : {
+    username : {
         type: String,
         required: true
     },
@@ -26,7 +26,9 @@ var schema = {
     }
 };
 
-var mongooseSchema = new mongoose.Schema(schema);
+var mongooseSchema = new mongoose.Schema(schema, {
+    collction: "Users"
+});
 
 mongooseSchema.pre("save", function(next){
 

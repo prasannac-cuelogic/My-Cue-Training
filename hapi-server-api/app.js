@@ -14,6 +14,8 @@ server.connection({
 
 require("./database");
 
+require("./modules");
+
 server.start(function() {
     log.write("Server running at:", server.info.uri);
 });

@@ -1,8 +1,11 @@
 "use strict";
 var promise = require('bluebird'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    requireDir = require('require-directory');
 
 var log = require("../utility/log");
+
+exports.models = requireDir(module, './models');
 
 mongoose.connect("mongodb://" + process.env.MONGODB_HOST + "/" + process.env.MONGODB_DATABASE, {
     user: process.env.MONGODB_USERNAME,

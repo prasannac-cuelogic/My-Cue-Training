@@ -21,7 +21,9 @@ var schema = {
     }
 }
 
-var mongooseSchema = new mongoose.Schema(schema);
+var mongooseSchema = new mongoose.Schema(schema, {
+    collction: "UsersActivity"
+});
 
 mongooseSchema.pre("save", function(next) {
 
