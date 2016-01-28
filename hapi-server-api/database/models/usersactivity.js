@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 
 var schema = {
 
-    user: {
+    userId: {
         type: mongoose.Schema.ObjectId,
         ref: "Users"
     },
@@ -15,7 +15,7 @@ var schema = {
         type: String,
         required: true
     },
-    date: {
+    loginDate: {
         type: Date,
         default: null
     }
@@ -27,8 +27,8 @@ mongooseSchema.pre("save", function(next) {
 
     var now = new Date();
 
-    if (!this.date) {
-        this.date = now;
+    if (!this.loginDate) {
+        this.loginDate = now;
     }
 
     next();
