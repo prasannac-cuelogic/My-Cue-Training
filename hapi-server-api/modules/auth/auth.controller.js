@@ -25,9 +25,8 @@ function authLogin(request, reply) {
     var pocket = {};
     pocket.user = reply.data.user;
     pocket.username = request.payload.username;
-    //pocket.tokenPayload = null;
-    //pocket.__s = null;
-    //pocket.now = new Date().toISOString();
+    pocket.tokenPayload = null;
+    pocket.secret = null;
 
     pocket.objUsersActivity = {
         "userId": pocket.user._id,
@@ -37,13 +36,27 @@ function authLogin(request, reply) {
 
     var newUsersActivityModel = new UsersActivityModel(pocket.objUsersActivity);
 
-    newUsersActivityModel.saveAsync().then(function(userActivity) {
+    newUsersActivityModel
+        .saveAsync()
+        .then(function(userActivity) {
             if (!userActivity) {
                 log.write("modules > auth > auth.controller.js > UsersActivityModel");
-                return promise.reject("User activity not stored.");
+
+                return new Promise(function(resolve, reject) {
+                    reject("User activity not stored.");
+                });
             }
 
+            //Create object for token generation
+            pocket.tokenPayload = {
+                _id: pocket.user._id,
+                username: pocket.username
+            };
+            //call create token method
+            pocket.secret = security.createToken(pocket.tokenPayload);
+
             reply.data = {
+                "secret": pocket.secret,
                 "message": "Logged in successfully."
             };
             reply.next();

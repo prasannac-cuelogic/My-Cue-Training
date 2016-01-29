@@ -16,6 +16,8 @@ require("./database");
 
 require("./modules");
 
+require("./authentication");
+
 server.start(function() {
     log.write("Server running at:", server.info.uri);
 });

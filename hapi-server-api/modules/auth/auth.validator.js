@@ -7,10 +7,10 @@ var promise = require("bluebird"),
 var usersModel = mongoose.model("Users"),
     UsersActivityModel = mongoose.model("UsersActivity");
 
-    module.exports = {
-        userLogin: userLogin,
-        userSignup: userSignup
-    };
+module.exports = {
+    userLogin: userLogin,
+    userSignup: userSignup
+};
 
 
 /**
@@ -29,7 +29,9 @@ function userLogin(request, reply) {
         .then(function(user) {
 
             if (!user) {
-                return promise.reject("Incorrect username or password.");
+                return new Promise(function(resolve, reject) {
+                    reject("Incorrect username or password.");
+                });
             }
 
             reply.data = {
@@ -63,7 +65,9 @@ function userSignup(request, reply) {
                 if (userDetail.username === request.payload.username) {
 
                     // Disallow because user has an account and email address
-                    return promise.reject({"message" : "You already have a account."});
+                    return new Promise(function(resolve, reject) {
+                        reject("You already have a account.");
+                    });
                 }
             } else {
                 reply.next();
