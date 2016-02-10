@@ -7,11 +7,13 @@ var promise = require("bluebird"),
 var security = require("../../utility/security"),
     log = require("../../utility/log");
 
-var usersModel = mongoose.model("Users");
+var usersModel = mongoose.model("Users"),
+    UsersActivityModel = mongoose.model("UsersActivity");
 
 module.exports = {
     fetchUserDetails: fetchUserDetails,
-    updateUserDetails: updateUserDetails
+    updateUserDetails: updateUserDetails,
+    getNotLoginUserDetails: getNotLoginUserDetails
 };
 
 /**
@@ -96,4 +98,40 @@ function updateUserDetails(request, reply) {
 }
 /**
  * END updateUserDetails
+ */
+
+/**
+ * Users who have not logged in since last 5 days.
+ */
+function getNotLoginUserDetails(request, reply) {
+
+    log.write("modules > users > users.controller.js > getNotLoginUserDetails()");
+
+    reply.data = {
+            "userDetails": reply.data.usersDetails,
+            "message": "User found."
+        };
+    reply.next();
+
+    /*UsersActivityModel.aggregateAsync([{
+            $group: {
+                _id: "userId"
+            },
+            $match: {
+                loginDate: {
+                    $gt: new Date()
+                }
+            }
+        }])
+        .then(function(usersDetails) {
+            console.log(usersDetails)
+            console.log("HERE")
+        })
+        .catch(function(err) {
+            log.write(err);
+            return reply.next(err);
+        });*/
+}
+/**
+ * END getNotLoginUserDetails
  */

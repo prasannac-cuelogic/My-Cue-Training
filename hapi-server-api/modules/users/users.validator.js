@@ -2,13 +2,16 @@
 var promise = require("bluebird"),
     mongoose = promise.promisifyAll(require("mongoose")),
     log = require("../../utility/log"),
-    security = require("../../utility/security");
+    security = require("../../utility/security"),
+    moment = require("moment");
 
-var usersModel = mongoose.model("Users");
+var usersModel = mongoose.model("Users"),
+    UsersActivityModel = mongoose.model("UsersActivity");
 
 module.exports = {
     fetchOneUserDetails: fetchOneUserDetails,
-    fetchUsersDetails: fetchUsersDetails
+    fetchUsersDetails: fetchUsersDetails,
+    fetchInactiveUsers: fetchInactiveUsers
 };
 
 
@@ -77,7 +80,6 @@ function fetchUsersDetails(request, reply) {
 
     log.write("modules > Users > users.validator.js > fetchUsersDetails()");
 
-
     usersModel.find({}, "_id firstName lastName username")
         .populate("users")
         .execAsync()
@@ -102,4 +104,73 @@ function fetchUsersDetails(request, reply) {
 }
 /**
  * END fetchUsersDetails
+ */
+
+/**
+ * Get Users who have not logged in since last 5 days
+ */
+function fetchInactiveUsers(request, reply) {
+    log.write("modules > Users > users.validator.js > fetchInactiveUsers()");
+
+    var startdate = moment().subtract(process.env.NOT_LOGIN, "days");
+    console.log(startdate)
+
+    UsersActivityModel.find({})
+        .populate({
+            path: 'Users',
+        })
+        .execAsync()
+        .then(function(usersDetails) {
+
+            if (!usersDetails) {
+
+                return new Promise(function(resolve, reject) {
+                    reject("Users are not present.");
+                });
+            } else {
+                reply.data = {
+                    usersDetails: usersDetails
+                };
+                reply.next();
+            }
+        })
+        .catch(function(err) {
+            log.write(err);
+            return reply.next(err);
+        });
+    /*UsersActivityModel.aggregateAsync({
+            $group: {
+                _id: "$userId",
+                loginDate: {
+                    $max: "$date"
+                }
+            }
+        }, {
+            $match: {
+                loginDate: {
+                    $lte: new Date(startdate)
+                }
+            }
+        })
+        .then(function(users) {
+
+            if(!users) {
+                return new Promise(function(resolve, reject) {
+                    reject("Last 5 days inactive users are not present.");
+                });
+            }
+
+            reply.data = {
+                users: users,
+                startDate: startdate
+            }
+            reply.next()
+        })
+        .catch(function(err) {
+
+            reply.next(err)
+        });*/
+}
+/**
+ * End fetchInactiveUsers
  */

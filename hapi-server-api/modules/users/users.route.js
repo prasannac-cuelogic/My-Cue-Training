@@ -48,6 +48,7 @@ module.exports = {
         method: "POST",
         path: "/user/{userId}",
         config: {
+            auth: "Main",
             description: "user signup",
             validate: {
                 payload: {
@@ -64,6 +65,24 @@ module.exports = {
                 var functionSeries = new series([
                     validator.fetchOneUserDetails,
                     controller.updateUserDetails
+                ]);
+
+                functionSeries.execute(request, reply);
+            }
+       }
+    },
+    getNotLoginUsersDetails: {
+        method: "GET",
+        path: "/users/notlogin",
+        config: {
+            auth: "Main",
+            description: "Users who have not logged in since last 5 days",
+            handler: function(request, reply) {
+
+                var functionSeries = new series([
+                    validator.fetchUsersDetails,
+                    validator.fetchInactiveUsers,
+                    controller.getNotLoginUserDetails
                 ]);
 
                 functionSeries.execute(request, reply);
